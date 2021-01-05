@@ -5,17 +5,17 @@ from sklearn.metrics.pairwise import linear_kernel
 from ast import literal_eval
 
 
-books = pd.read_csv('name_books.csv', encoding='latin-1')
-
-books['isbn13'] = books['isbn13'].astype('int')
-books_tfidf = TfidfVectorizer(stop_words='english')
-
-books['title'] = books['title'].fillna('')
-book_title_matrix = books_tfidf.fit_transform(books['title'])
-
-similarity_matrix = cosine_similarity(book_title_matrix, book_title_matrix)
-
-mapping = pd.Series(books.index, index=books['title'])
+# books = pd.read_csv('name_books.csv', encoding='latin-1')
+#
+# books['isbn13'] = books['isbn13'].astype('int')
+# books_tfidf = TfidfVectorizer(stop_words='english')
+#
+# books['title'] = books['title'].fillna('')
+# book_title_matrix = books_tfidf.fit_transform(books['title'])
+#
+# similarity_matrix = cosine_similarity(book_title_matrix, book_title_matrix)
+# 
+# mapping = pd.Series(books.index, index=books['title'])
 
 
 def recommend_book(book_input):
