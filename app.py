@@ -16,10 +16,14 @@ def alive():
 # A route to return all of the recommended books to the shelf.
 @app.route('/recommender', methods=['POST'])
 def get_books():
-    request_params = request.json()
+    request_params = request.json
     result = recommend_book(request_params['name'])
 
-    return json.dumps(result)
+    response = {
+        'user_id': request_params['user_id'],
+        'isbns': result
+    }
+    return json.dumps(response)
 
 
 if __name__ == '__main__':
