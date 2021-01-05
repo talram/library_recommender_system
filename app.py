@@ -4,13 +4,9 @@ from flask import request
 import json
 from recommend_system import recommend_book
 
+
 app = flask.Flask(__name__)
 CORS(app)
-
-
-@app.route('/', methods=['GET'])
-def alive():
-    return "i am alive"
 
 
 # A route to return all of the recommended books to the shelf.
