@@ -8,6 +8,11 @@ app = flask.Flask(__name__)
 CORS(app)
 
 
+@app.route('/', methods=['GET'])
+def alive():
+    return "i am alive"
+
+
 # A route to return all of the recommended books to the shelf.
 @app.route('/recommender', methods=['POST'])
 def get_books():
