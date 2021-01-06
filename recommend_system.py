@@ -28,7 +28,7 @@ def recommend_book(book_input):
     # Sort them in descending order
     similarity_score = sorted(similarity_score, key=lambda x: x[1], reverse=True)
 
-    # Get the scores of the top 3 most similar
+    # Get the scores of the top 3 most similar books
     recommended_books = []
     for book_index in similarity_score:
         if len(recommended_books) == 3:

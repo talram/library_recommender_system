@@ -4,7 +4,7 @@ from flask import request
 import json
 from recommend_system import recommend_book
 
-
+# Create the app
 app = flask.Flask(__name__)
 CORS(app)
 
