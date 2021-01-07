@@ -1,5 +1,5 @@
 import flask
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 from flask import request
 import json
 from recommend_system import recommend_book
@@ -11,6 +11,7 @@ CORS(app)
 
 # A route to return all of the recommended books to the shelf.
 @app.route('/recommender', methods=['POST'])
+@cross_origin()
 def get_books():
     request_params = request.json
     result = recommend_book(request_params['name'])
