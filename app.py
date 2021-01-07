@@ -13,7 +13,9 @@ CORS(app)
 @app.route('/recommender', methods=['POST'])
 @cross_origin()
 def get_books():
+    print("Hello")
     request_params = request.json
+    print(request_params)
     result = recommend_book(request_params['name'])
 
     response = {
