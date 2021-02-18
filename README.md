@@ -1,6 +1,7 @@
 # library_rec
 
 Content-Based Recommender System for books- personalized book-shelf for the user. 
+
 Created with Python and Flask.
 Launched with Heroku server.
 
